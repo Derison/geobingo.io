@@ -22,80 +22,70 @@
   setRoom();
 </script>
 
-<div class="w-lg">
-  <ul class="p-4 grid w-full space-y-4 shadow-lg bg-base-100 rounded-box">
-    <li class="flex justify-center w-full">
-      <span> login or choose username </span>
-    </li>
-    <div class="w-full">
-      <li class="flex justify-center w-full">
-        <SignIn bind:code />
-      </li>
-    </div>
-    {#if !$api.player.twitch}
-      <li class="bordered w-full">
-        <NameChange />
-      </li>
-    {/if}
-    <li class="relative">
+<div class="w-5/12 shadow-lg bg-base-100 rounded-box flex h-72">
+  <div class="w-1/2 p-10">
+    <div class="relative">
       <input
         type="text"
         placeholder="Code"
         bind:value={lobbyToJoin}
-        class="w-full select-auto input input-primary input-bordered"
+        class="w-full select-auto input border-primary-focus"
       />
       <button
         on:click={() => api.player.join(lobbyToJoin)}
-        class="absolute top-0 right-0 rounded-l-none btn btn-primary font-bold text-xl"
-        >join</button
+        class="btn btn-primary absolute right-0">join</button
       >
-    </li>
-    <li>
-      <label class="cursor-pointer label">
-        <span class="label-text">hide link to game</span>
-        <input
-          type="checkbox"
-          on:click={() => (privateLobby = !privateLobby)}
-          checked={privateLobby}
-          class="toggle"
-        />
-      </label>
-    </li>
-    <div>
-      <li class="">
-        <button
-          on:click={() => {
-            if (api.player) {
-              console.log(navigator.language || navigator.userLanguage);
-              const lang = (navigator.language || navigator.userLanguage).slice(
-                0,
-                2
-              );
-              // maybe get languages from backend in the future
-              console.log(lang);
-              $api.player.host(privateLobby, "game", lang);
-            }
-          }}
-          class="btn btn-primary w-full"
-        >
-          Play with friends/chat
-        </button>
-      </li>
     </div>
-    <div class="indicator w-full">
-      <li class="w-full">
-        <span class="indicator-item badge badge-info">BETA</span>
-        <button
-          on:click={() => {
-            if (api.player) {
-              $api.player.host(privateLobby, "MMGame");
-            }
-          }}
-          class="btn btn-primary w-full h-fit"
-        >
-          join public game
-        </button>
-      </li>
+
+    <label class="cursor-pointer label mt-2">
+      <span class="label-text">hide link to game</span>
+      <input
+        type="checkbox"
+        on:click={() => (privateLobby = !privateLobby)}
+        checked={privateLobby}
+        class="toggle"
+      />
+    </label>
+
+    <div class="w-full mt-8">
+      <SignIn bind:code />
     </div>
-  </ul>
+    {#if !$api.player.twitch}
+      <NameChange />
+    {/if}
+  </div>
+  <div class="w-1/2 p-10">
+    <button
+      on:click={() => {
+        if (api.player) {
+          console.log(navigator.language || navigator.userLanguage);
+          const lang = (navigator.language || navigator.userLanguage).slice(
+            0,
+            2
+          );
+          // maybe get languages from backend in the future
+          console.log(lang);
+          $api.player.host(privateLobby, "game", lang);
+        }
+      }}
+      class="btn btn-primary w-full"
+    >
+      Play with friends/chat
+    </button>
+    <div class="pt-4 relative">
+      <span class="indicator-item badge badge-info absolute right-2 -mt-2"
+        >BETA</span
+      >
+      <button
+        on:click={() => {
+          if (api.player) {
+            $api.player.host(privateLobby, "MMGame");
+          }
+        }}
+        class="btn btn-primary w-full h-fit"
+      >
+        join public game
+      </button>
+    </div>
+  </div>
 </div>

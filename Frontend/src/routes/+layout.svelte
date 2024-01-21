@@ -10,6 +10,6 @@
   });
 </script>
 
-<div class=" min-h-screen w-full flex flex-col justify-stretch">
+<div class="min-h-screen w-full flex flex-col justify-stretch">
   <slot />
 </div>

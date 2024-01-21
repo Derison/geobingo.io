@@ -27,16 +27,16 @@
   let disabled = false;
 </script>
 
-<div class="min-h-screen">
-  <div class="flex justify-center items-center p-2">
-    <img class=" rounded-md back shadow-2xl w-1/4" src="cover.png" alt="" />
+<div>
+  <div class="flex justify-center items-center p-16">
+    <img class="rounded-md back shadow-2xl w-1/4" src="cover.png" alt="" />
   </div>
 
   <div class="p-2">
-    <Socials />
+    <!-- <Socials /> -->
   </div>
 
-  <div class="w-full flex flex-col md:flex-row p-2 justify-center items-center">
+  <div class="w-full p-2 justify-center items-center">
     <div class="p-2 flex items-center justify-center">
       {#if $api?.player}
         <Login />
@@ -45,13 +45,13 @@
       {/if}
     </div>
     <div class="p-2">
-      {#if $api.streamerFrontPage}
+      <!-- {#if $api.streamerFrontPage}
         <StreamerFrontPage streamerFrontPage={$api.streamerFrontPage} />
       {:else if events.length}
         <Carousel {events} bind:disabled />
       {:else}
         <Discord />
-      {/if}
+      {/if} -->
     </div>
   </div>
 </div>

@@ -1,23 +1,26 @@
-<script>
-  import Socials from "$lib/components/Socials.svelte";
-</script>
-
-<footer class="items-center p-4 footer bg-neutral text-neutral-content">
-  <div class="items-center grid text-center">
+<footer
+  class="p-4 footer bg-base-100 text-neutral-content fixed bottom-0"
+>
+  <div class="flex flex-col items-center p-4 w-full">
     <p>
-      <span class=" font-bold text-xl mr-2">GeoBingo.io</span>
-
-      Sören Michaels © 2022 - All right reserved
+      Sören Michaels © 2022 - All rights reserved
     </p>
-    <p>
-      <a href="Impressum" target="_blank" class="text-xs"> Impressum </a>
-      <a href="Datenschutzerklaerung" target="_blank" class="text-xs">
+    <p class="text-gray-400">
+      <a
+        href="Impressum"
+        target="_blank"
+        class="text-xs hover:text-gray-300"
+      >
+        Impressum
+      </a>
+       |  
+      <a
+        href="Datenschutzerklaerung"
+        target="_blank"
+        class="text-xs hover:text-gray-300"
+      >
         Datenschutzerklärung
       </a>
     </p>
-  </div>
-
-  <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-    <Socials />
   </div>
 </footer>
