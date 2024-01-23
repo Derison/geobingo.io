@@ -149,7 +149,7 @@
 
     <div class="grid gap-5 m-0 lg:grid-cols-2">
       <div>
-        <div class="mb-4 bg-base-100 card bordered shadow-lg">
+        <!-- <div class="mb-4 bg-base-100 card bordered shadow-lg">
           <div class="card-body">
             <h3 class="card-title">Links</h3>
             <div class="grid gap-2">
@@ -160,7 +160,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="card bg-base-100 bordered shadow-lg">
           <div class="card-body">
             <h3 class="card-title flex flex-wrap">

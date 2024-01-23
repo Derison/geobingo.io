@@ -80,6 +80,7 @@ export class Player {
   changeGameMode(gameType: "gah" | "game" | "MMGame" = "game") {
     socket.emit("normalGame:changeGameMode", gameType);
   }
+
   join(lobby: string) {
     socket.emit("normalGame:join", lobby, (response) => {
       if (response !== "success") {

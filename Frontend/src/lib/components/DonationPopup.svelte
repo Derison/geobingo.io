@@ -1,5 +1,5 @@
 <script lang="ts">
-  let donation = true;
+  let donation = false;
   import { HeartIcon } from "svelte-feather-icons";
 </script>
 
